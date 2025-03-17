@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LostSec | Coffixp </title>
+    <link rel="icon" type="image/png" href="spider.png">
+    <meta name="description" content="Bug Hunting methodlogy, oneliner and tools by CoffinXP.">
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="intro-container">
+        <div class="intro-content">
+            <div class="intro-logo">
+                <img class="spider-logo" src="spider.png" alt="Spider Icon">
+            </div>
+            <div class="intro-text">
+                <h1>BUG HUNTING</h1>
+                <br>
+                <br>
+            </div>
+            <div class="intro-credits">
+                <span>By</span>
+                <a href="https://github.com/coffinxp" class="credit-name">Coffinxp</a>
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="header-content">
+            <h1><a target="_blank" href="https://t.me/+BGVzIMlsr-VhZWQ1" class="credit-name" style="font-style: italic;">LostSec</a></h1>
+        </div>
+    </header>
+    <div class="toggle-container">
+        <button class="tutorials-toggle">
+            <i class='bx bxl-youtube'></i>
+            Tutorials
+        </button>
+        <button class="tools-toggle">
+            <i class='bx bx-wrench'></i>
+            Tools
+        </button>
+        <button class="extensions-toggle">
+            <i class='bx bxl-chrome'></i>
+            Extensions
+        </button>
+        <button class="writeups-toggle">
+            <i class='bx bx-book-content'></i>
+            Writeups
+        </button>
+    </div>
+    <main>  
+        <div class="content-wrapper">
+            <div class="terminal-container">
+                <div id="methodology-content">
+                    <div class="loading-message">
+                        <i class='bx bx-loader-alt bx-spin'></i>
+                        <p>Loading methodologies...</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="latest-video-section">
+                <div class="video-section-title">
+                    <i class='bx bxl-youtube'></i>
+                    Tutorials
+                </div>
+                <div class="video-scroll-container">
+                    <div class="video-container">
+                        <div class="video-card">
+                            <div class="video-thumbnail">
+                                <img src="https://i3.ytimg.com/vi/KwO8q4q0HXw/maxresdefault.jpg" alt="Latest Video" loading="lazy">
+                                <div class="play-overlay">
+                                    <i class='bx bxl-youtube' ></i>
+                                </div>
+                            </div>
+                            <div class="video-info" href="https://youtube.com/lostsecc">
+                                <span class="video-tag">Latest Video</span>
+                                <h3 class="video-title">Latest Bug Bounty Tutorial</h3>
+                                <a href="https://youtube.com/@lostsecc" class="watch-now">
+                                    Watch on YouTube <i class='bx bx-right-arrow-alt'></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tools-section">
+                <div class="tools-section-title">
+                    <i class='bx bx-wrench'></i>
+                    Tools
+                </div>
+                <div class="tools-container">
+                </div>
+            </div>
+            <div class="extensions-section">
+                <div class="extensions-section-title">
+                    <i class='bx bxl-chrome'></i>
+                    Browser Extensions
+                </div>
+                <div class="extensions-container">
+                </div>
+            </div>
+            <div class="writeups-section">
+                <div class="writeups-section-title">
+                    <i class='bx bx-book-content'></i>
+                    Writeups
+                </div>
+                <div class="writeups-container">
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="terminal-footer">
+            <div class="footer-info">
+                <span class="footer-text" style="font-style: italic;">
+                    <a href="https://t.me/+BGVzIMlsr-VhZWQ1" class="telegram-link">
+                        <i class='bx bxl-telegram'></i>
+                        Join telegram
+                    </a>
+                </span>
+            </div>
+            <div class="footer-social">
+                <a href="https://github.com/coffinxp" title="GitHub"><i class='bx bxl-github'></i></a>
+                <a href="https://youtube.com/@lostsecc" title="YouTube"><i class='bx bxl-youtube'></i></a>
+            </div>
+        </div>
+    </footer>
+    <script>
+    function copyToClipboard(button, text) {
+        navigator.clipboard.writeText(text).then(() => {
+            button.textContent = 'Copied!';
+            setTimeout(() => {
+                button.textContent = 'Copy';
+            }, 2000);
+        });
+    }
+    </script>
+    <script src="script.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"921bf0908ab43ddb","version":"2025.1.0","r":1,"token":"5f1fcfcd357d4f6cb8ccb280540ed8ea","serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}}}' crossorigin="anonymous"></script>
+</body>
+</html>
