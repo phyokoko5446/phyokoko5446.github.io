@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +19,7 @@ url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
     /* BODY */
     body {
-      min-height: 100vh; 
+      min-height: 100vh;
       background: #0d1117 url('image.jpg') center center / cover no-repeat 
 fixed;
       color: #c9d1d9;
@@ -37,14 +36,13 @@ fixed;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 10%;
+      padding: 15px 5%;
+      flex-wrap: wrap;
     }
 
     /* Glitch Effect */
     .glitch-logo {
-      position: relative;
-      display: inline-block;
-      font-size: 24px;
+      font-size: 20px;
       font-weight: bold;
       text-transform: uppercase;
       letter-spacing: 2px;
@@ -53,86 +51,51 @@ fixed;
       animation: glitch 1s infinite;
     }
 
-    /* Keyframes for Glitch Effect */
-     @keyframes glitch {
-            0% { text-shadow: 2px 2px #0f0, -2px -2px #00ff00; }
-            50% { text-shadow: -2px -2px #0f0, 2px 2px #00ff00; }
-            100% { text-shadow: 2px -2px #0f0, -2px 2px #00ff00; }
+    @keyframes glitch {
+      0% { text-shadow: 2px 2px #0f0, -2px -2px #00ff00; }
+      50% { text-shadow: -2px -2px #0f0, 2px 2px #00ff00; }
+      100% { text-shadow: 2px -2px #0f0, -2px 2px #00ff00; }
+    }
 
+    .sidebar-footer {
+      position: fixed;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 55px;
+      background: #161b22;
+      padding: 5px;
+      border-radius: 10px 0 0 10px;
+      box-shadow: -4px 0px 10px rgba(168, 85, 247, 0.5);
+      text-align: center;
+    }
 
-        }
+    .sidebar-footer a img {
+      width: 25px;
+      height: 25px;
+      margin: 10px 0;
+      transition: transform 0.3s;
+    }
 
-          .sidebar-footer {
-            position: fixed;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 65px;
-            background: #161b22;
-            padding: 1px 1px;
-            border-radius: 10px 0 0 10px;
-            box-shadow: -4px 0px 10px rgba(168, 85, 247, 0.5);
-            text-align: center;
-        }
-
-.sidebar-footer a {
-    margin: 8px 0;
-}
-
-  .sidebar-footer a {
-            display: block;
-            color: #a855f7;
-            font-size: 20px;
-            margin: 15px 0;
-            text-decoration: none;
-            transition: transform 0.3s, color 0.3s;
-        }
-
-
-.sidebar-footer img {
-    width: 30px; /* Adjust icon size */
-    height: 30px;
-    transition: transform 0.3s ease;
-}
-
-     .sidebar-footer a:hover {
-            transform: scale(1.2);
-            color: #facc15;
-        }
-        
-            /* Glowing Effect */
-        .sidebar-footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 3px;
-            height: 100%;
-            background: linear-gradient(to bottom, #8b5cf6, #facc15, 
-#8b5cf6);
-            animation: glow 2s linear infinite alternate;
-        }
-
-        @keyframes glow {
-            0% { opacity: 0.3; }
-            100% { opacity: 1; }
-        }
-
+    .sidebar-footer a:hover img {
+      transform: scale(1.2);
+    }
 
     /* NAVIGATION */
     nav ul {
       list-style: none;
       display: flex;
+      flex-wrap: wrap;
     }
 
     nav ul li {
-      margin: 0 15px;
+      margin: 5px 10px;
     }
 
     nav ul li a {
       text-decoration: none;
       color: #0f0;
-      font-size: 18px;
+      font-size: 16px;
       transition: 0.3s;
     }
 
@@ -144,7 +107,7 @@ fixed;
     /* CTA BUTTON */
     .cta {
       background: transparent;
-      padding: 10px 20px;
+      padding: 8px 15px;
       border: 2px solid #0f0;
       border-radius: 5px;
       text-decoration: none;
@@ -162,8 +125,8 @@ fixed;
     /* MAIN CONTENT */
     main {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
       padding: 20px;
     }
 
@@ -171,7 +134,7 @@ fixed;
     .card {
       background: rgba(22, 27, 34, 0.8);
       border-radius: 10px;
-      padding: 35px;
+      padding: 25px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
       transition: transform 0.3s, box-shadow 0.3s;
       border: 2px solid rgba(255, 255, 255, 0.1);
@@ -180,49 +143,34 @@ fixed;
     .card h2 {
       color: #ffffff;
       margin-bottom: 10px;
-      font-size: 30px;
+      font-size: 22px;
     }
 
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0px 0px 30px rgba(0, 255, 0, 1);
+      box-shadow: 0px 0px 20px rgba(0, 255, 0, 1);
     }
 
-    .tags {
-      display: flex;
-      gap: 5px;
-      margin-bottom: 8px;
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+      .sidebar-footer {
+        width: 45px;
+      }
+      .sidebar-footer a img {
+        width: 20px;
+        height: 20px;
+      }
     }
-
-    .tag {
-      background: rgba(0, 0, 0, 0.3);
-      color: #ff2b2b;
-      padding: 8px;
-      border-radius: 5px;
-      font-size: 12px;
-      font-weight: 500;
-    }
-
-    .view-link {
-      color: #10b981;
-      text-decoration: none;
-      font-weight: bold;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      transition: color 0.3s ease, transform 0.2s ease;
-    }
-
-    .view-link:hover {
-      color: #ff2b2b;
-      transform: scale(1.05);
-    }
-
   </style>
 </head>
 <body>
-
-  <!-- Sticky Header -->
   <header>
     <div class="glitch-logo">R00T</div>
     <nav>
@@ -235,182 +183,124 @@ fixed;
     </nav>
     <p class="cta">Exploit, adapt, evolve</p>
   </header>
-
-  <!-- Main Content -->
   <main>
     <div class="card">
       <h2>Advanced Recon</h2>
-      <div class="tags">
-        <span class="tag">#methodology</span>
-        <span class="tag">#recon</span>
-      </div>
-      <a href="#" class="view-link">🔍 View Methodology →</a>
-    </div>
-
-    <div class="card">
-      <h2>SQL Injection</h2>
-      <div class="tags">
-        <span class="tag">#security</span>
-        <span class="tag">#sql</span>
-      </div>
-      <a href="#" class="view-link">🔍 View Methodology →</a>
-    </div>
-
-    <div class="card">
-      <h2>Cross-Site Scripting</h2>
-      <div class="tags">
-        <span class="tag">#security</span>
-        <span class="tag">#xss</span>
-      </div>
-      <a href="#" class="view-link">🔍 View Methodology →</a>
-    </div>
-
-    <div class="card">
-      <h2>Privilege Escalation</h2>
-      <div class="tags">
-        <span class="tag">#exploit</span>
-        <span class="tag">#escalation</span>
-      </div>
-      <a href="#" class="view-link">🔍 View Methodology →</a>
-    </div>
-      <div class="card">
-      <h2>Privilege Escalation</h2>
-      <div class="tags">
-        <span class="tag">#exploit</span>
-        <span class="tag">#escalation</span>
-      </div>
       <a href="#" class="view-link">🔍 View Methodology →</a>
     </div>
      <div class="card">
-      <h2>Privilege Escalation</h2>
-      <div class="tags">
-        <span class="tag">#exploit</span>
-        <span class="tag">#escalation</span>
-      </div>
+      <h2>Advanced Recon</h2>
       <a href="#" class="view-link">🔍 View Methodology →</a>
     </div>
      <div class="card">
-      <h2>Privilege Escalation</h2>
-      <div class="tags">
-        <span class="tag">#exploit</span>
-        <span class="tag">#escalation</span>
-      </div>
+      <h2>Advanced Recon</h2>
       <a href="#" class="view-link">🔍 View Methodology →</a>
     </div>
      <div class="card">
-      <h2>Privilege Escalation</h2>
-      <div class="tags">
-        <span class="tag">#exploit</span>
-        <span class="tag">#escalation</span>
-      </div>
+      <h2>Advanced Recon</h2>
       <a href="#" class="view-link">🔍 View Methodology →</a>
     </div>
      <div class="card">
-      <h2>Privilege Escalation</h2>
-      <div class="tags">
-        <span class="tag">#exploit</span>
-        <span class="tag">#escalation</span>
-      </div>
+      <h2>Advanced Recon</h2>
       <a href="#" class="view-link">🔍 View Methodology →</a>
     </div>
      <div class="card">
-      <h2>Privilege Escalation</h2>
-      <div class="tags">
-        <span class="tag">#exploit</span>
-        <span class="tag">#escalation</span>
-      </div>
+      <h2>Advanced Recon</h2>
       <a href="#" class="view-link">🔍 View Methodology →</a>
     </div>
      <div class="card">
-      <h2>Privilege Escalation</h2>
-      <div class="tags">
-        <span class="tag">#exploit</span>
-        <span class="tag">#escalation</span>
-      </div>
+      <h2>Advanced Recon</h2>
       <a href="#" class="view-link">🔍 View Methodology →</a>
     </div>
      <div class="card">
-      <h2>Privilege Escalation</h2>
-      <div class="tags">
-        <span class="tag">#exploit</span>
-        <span class="tag">#escalation</span>
-      </div>
+      <h2>Advanced Recon</h2>
       <a href="#" class="view-link">🔍 View Methodology →</a>
     </div>
      <div class="card">
-      <h2>Privilege Escalation</h2>
-      <div class="tags">
-        <span class="tag">#exploit</span>
-        <span class="tag">#escalation</span>
-      </div>
+      <h2>Advanced Recon</h2>
       <a href="#" class="view-link">🔍 View Methodology →</a>
     </div>
      <div class="card">
-      <h2>Privilege Escalation</h2>
-      <div class="tags">
-        <span class="tag">#exploit</span>
-        <span class="tag">#escalation</span>
-      </div>
+      <h2>Advanced Recon</h2>
       <a href="#" class="view-link">🔍 View Methodology →</a>
     </div>
      <div class="card">
-      <h2>Privilege Escalation</h2>
-      <div class="tags">
-        <span class="tag">#exploit</span>
-        <span class="tag">#escalation</span>
-      </div>
+      <h2>Advanced Recon</h2>
       <a href="#" class="view-link">🔍 View Methodology →</a>
     </div>
      <div class="card">
-      <h2>Privilege Escalation</h2>
-      <div class="tags">
-        <span class="tag">#exploit</span>
-        <span class="tag">#escalation</span>
-      </div>
+      <h2>Advanced Recon</h2>
       <a href="#" class="view-link">🔍 View Methodology →</a>
     </div>
      <div class="card">
-      <h2>Privilege Escalation</h2>
-      <div class="tags">
-        <span class="tag">#exploit</span>
-        <span class="tag">#escalation</span>
-      </div>
+      <h2>Advanced Recon</h2>
       <a href="#" class="view-link">🔍 View Methodology →</a>
     </div>
      <div class="card">
-      <h2>Privilege Escalation</h2>
-      <div class="tags">
-        <span class="tag">#exploit</span>
-        <span class="tag">#escalation</span>
-      </div>
+      <h2>Advanced Recon</h2>
+      <a href="#" class="view-link">🔍 View Methodology →</a>
+    </div>
+     <div class="card">
+      <h2>Advanced Recon</h2>
+      <a href="#" class="view-link">🔍 View Methodology →</a>
+    </div>
+     <div class="card">
+      <h2>Advanced Recon</h2>
+      <a href="#" class="view-link">🔍 View Methodology →</a>
+    </div>
+     <div class="card">
+      <h2>Advanced Recon</h2>
+      <a href="#" class="view-link">🔍 View Methodology →</a>
+    </div>
+     <div class="card">
+      <h2>Advanced Recon</h2>
+      <a href="#" class="view-link">🔍 View Methodology →</a>
+    </div>
+     <div class="card">
+      <h2>Advanced Recon</h2>
+      <a href="#" class="view-link">🔍 View Methodology →</a>
+    </div>
+     <div class="card">
+      <h2>Advanced Recon</h2>
+      <a href="#" class="view-link">🔍 View Methodology →</a>
+    </div>
+     <div class="card">
+      <h2>Advanced Recon</h2>
+      <a href="#" class="view-link">🔍 View Methodology →</a>
+    </div>
+     <div class="card">
+      <h2>Advanced Recon</h2>
+      <a href="#" class="view-link">🔍 View Methodology →</a>
+    </div>
+     <div class="card">
+      <h2>Advanced Recon</h2>
+      <a href="#" class="view-link">🔍 View Methodology →</a>
+    </div>
+     <div class="card">
+      <h2>Advanced Recon</h2>
+      <a href="#" class="view-link">🔍 View Methodology →</a>
+    </div>
+     <div class="card">
+      <h2>Advanced Recon</h2>
+      <a href="#" class="view-link">🔍 View Methodology →</a>
+    </div>
+     <div class="card">
+      <h2>Advanced Recon</h2>
+      <a href="#" class="view-link">🔍 View Methodology →</a>
+    </div>
+     <div class="card">
+      <h2>Advanced Recon</h2>
       <a href="#" class="view-link">🔍 View Methodology →</a>
     </div>
     <div class="card">
-      <h2>Brute Force</h2>
-      <div class="tags">
-        <span class="tag">#attack</span>
-        <span class="tag">#password</span>
-      </div>
+      <h2>SQL Injection</h2>
       <a href="#" class="view-link">🔍 View Methodology →</a>
     </div>
-      <div class="sidebar-footer">
-    <a href="https://facebook.com" target="_blank">
-      <img src="facebook.svg" alt="Facebook Icon" title="Facebook" />
-    </a>
-    <a href="https://twitter.com" target="_blank">
-      <img src="twitter.svg" alt="Twitter Icon" title="Twitter" />
-    </a>
-    <a href="https://instagram.com" target="_blank">
-      <img src="instagram.svg" alt="Instagram Icon" title="Instagram" />
-    </a>
-    <a href="https://github.com" target="_blank">
-      <img src="github.png" alt="GitHub Icon" title="GitHub" />
-    </a>
-  </div>
   </main>
-
-
+  <div class="sidebar-footer">
+    <a href="https://github.com" target="_blank"><img src="github.png" 
+alt="GitHub" /></a>
+  </div>
 </body>
 </html>
-
 
